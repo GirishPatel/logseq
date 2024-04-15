@@ -11,20 +11,7 @@ module.exports = {
         "name": "logseq",
         "schemes": "logseq"
       }
-    ],
-    osxSign: {
-      identity: 'Developer ID Application: Tiansheng Qin',
-      'hardened-runtime': true,
-      entitlements: 'entitlements.plist',
-      'entitlements-inherit': 'entitlements.plist',
-      'signature-flags': 'library'
-    },
-    osxNotarize: {
-      tool: 'notarytool',
-      appleId: process.env['APPLE_ID'],
-      appleIdPassword: process.env['APPLE_ID_PASSWORD'],
-      teamId: process.env['APPLE_TEAM_ID']
-    },
+    ]
   },
   makers: [
     {
@@ -50,7 +37,6 @@ module.exports = {
       name: '@electron-forge/maker-zip',
       platforms: ['darwin', 'linux', 'win32'],
     },
-
     {
       name: 'electron-forge-maker-appimage',
       platforms: ['linux'],
